@@ -1,0 +1,31 @@
+{
+  "name": "web-starter-kit",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavlak/web-starter-kit.git"
+  },
+  "author": "gavlak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gavlak/web-starter-kit/issues"
+  },
+  "homepage": "https://github.com/gavlak/web-starter-kit#readme",
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2"
+  }
+}

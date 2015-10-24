@@ -1,0 +1,12 @@
+include _config.jade
+
+if production
+    mixin link(href, name)
+        a(class!=attributes.class, href=href)= name
+else
+    mixin link(href, name)
+        if href == '/'
+            a(class!=attributes.class, href=href)= name
+        else
+            a(class!=attributes.class, href=href + '.html')= name
+
