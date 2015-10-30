@@ -1,10 +1,12 @@
 include _mixins.jade
 doctype html
-html
+html(lang=language)
     head
+        meta(charset="UTF-8")
         block title
             title Document
         link(rel="stylesheet" type="text/css" href="assets/style.css")
+        block head
 
     body
         block content

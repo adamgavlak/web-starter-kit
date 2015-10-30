@@ -1,0 +1,35 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background: linear-gradient(#fff, #ddd);
+    
+    h1, p {
+        font-family: 'Work Sans', sans-serif;
+    }
+
+    h1 {
+        font-size: 5rem;
+        margin: 0.7rem 0;
+        letter-spacing: 0.1rem;
+        font-weight: 100;
+        color: #333;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #777;
+        font-weight: 300;
+    }
+}
