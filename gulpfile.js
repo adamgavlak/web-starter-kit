@@ -1,3 +1,24 @@
+/* Directories, paths and file config */
+var dirs = {
+    src: 'source',
+    dest: 'public'
+};
+
+var paths = {
+    styles: dirs.src + '/sass/**/*.scss',
+    images: dirs.src + '/images/**/*.{jpg,jpeg,png,gif}',
+    scripts: dirs.src + '/js/**/*.js',
+    jade: [dirs.src + '/html/*.jade', '!' + dirs.src + '/html/_*.jade'],
+    build: dirs.dest + '/',
+    assets: dirs.dest + '/assets'
+};
+
+var files = {
+    javascript: 'app',
+    style: 'style'
+};
+
+/* Gulp */
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
@@ -8,15 +29,7 @@ var del = require('del');
 var jade = require('gulp-jade');
 var imagemin = require('gulp-imagemin');
 var browsersync = require('browser-sync').create();
-
-var paths = {
-    styles: 'source/sass/**/*.scss',
-    images: 'source/images/**/*.{jpg,jpeg,png,gif}',
-    scripts: 'source/js/**/*.js',
-    jade: ['source/html/*.jade', '!source/html/_*.jade'],
-    build: 'public/',
-    assets: 'public/assets'
-};
+var rename = require('gulp-rename');
 
 gulp.task('default', ['styles', 'scripts', 'jade']); 
 
@@ -38,14 +51,16 @@ gulp.task('styles', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sourcemaps.write())
+        .pipe(rename({basename: files.style, extname: '.css'}))
         .pipe(gulp.dest(paths.assets))
         .pipe(browsersync.stream());
 });
 
 gulp.task('scripts', function() {
     gulp.src(paths.scripts)
-        .pipe(concat('app.js'))
+        .pipe(concat(files.javascript))
         .pipe(uglify())
+        .pipe(rename({basename: files.javascript, extname: '.js'}))
         .pipe(gulp.dest(paths.assets))
         .pipe(browsersync.stream());
 }); 
@@ -57,7 +72,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('serve', ['styles', 'scripts', 'jade'], function() {
-    browsersync.init({server: "./public"});
+    browsersync.init({server: "./" + dirs.dest});
 
     gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.scripts, ['scripts']);

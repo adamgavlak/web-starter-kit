@@ -1,6 +1,6 @@
 {
   "name": "web-starter-kit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-jade": "^1.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2"
