@@ -3,6 +3,8 @@ doctype html
 html(lang=language)
     head
         meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
         block title
             title Document
         link(rel="stylesheet" type="text/css" href="assets/style.css")
@@ -10,6 +12,9 @@ html(lang=language)
 
     body
         block content
+        if jquery
+            script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+            script window.jQuery || document.write('<script src="assets/vendor/jquery-1.11.3.min.js"><\/script>');
         script(src="assets/app.js")
         if browsersync
             script document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.9.11.js'><\/script>".replace("HOST", location.hostname));
