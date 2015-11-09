@@ -1,3 +1,4 @@
 *
 !.gitignore
 !style.scss
+!_normalize.scss

@@ -1,3 +1,5 @@
+@import 'normalize';
+
 html, body {
     height: 100%;
     margin: 0;
@@ -13,23 +15,36 @@ html, body {
     flex-direction: column;
     flex-wrap: wrap;
 
-    background: linear-gradient(#fff, #ddd);
+    $text_color: #444;
+    $gradient_top: #fbfbfb;
+    $gradient_bottom: #cdcdcd;
+
+    background: -webkit-linear-gradient(top, $gradient_top, $gradient_bottom);
     
     h1, p {
         font-family: 'Work Sans', sans-serif;
     }
 
+    
+
     h1 {
         font-size: 5rem;
         margin: 0.7rem 0;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.15rem;
         font-weight: 100;
-        color: #333;
+        color: $text_color;
     }
 
     p {
         font-size: 1rem;
-        color: #777;
+        color: $text_color;
         font-weight: 300;
+    }
+
+    .smaller {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        font-family: 'Work Sans', sans-serif;
+        color: $text_color;
     }
 }
