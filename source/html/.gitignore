@@ -1,6 +1,7 @@
 *
 !.gitignore
 !index.jade
+!404.jade
 !_config.jade
 !_mixins.jade
 !_template.jade
